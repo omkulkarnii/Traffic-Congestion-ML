@@ -1,28 +1,28 @@
-#Real-Time Traffic Congestion Prediction using ML
+# Traffic Congestion Prediction Using Machine Learning
 
-**This project predicts traffic congestion levels using machine learning based on factors like time, day, weather, vehicle count, and speed.**
+This is a mini project I worked on to predict traffic congestion using machine learning.  
+It uses features like time, day, weather, number of vehicles, and speed to predict congestion level.
 
-## Files
-- `traffic_model.py` → ML model using RandomForestRegressor  
-- `traffic_data_sample.csv` → Sample traffic data  
-- `README.md` → Project info
+## Files in the Project
+- `traffic_model.py` → main Python code with model building and prediction
+- `traffic_data_sample.csv` → sample dataset for testing the model
+- `README.md` → info about the project
 
-## Tools Used
-- Python, Pandas, NumPy, Matplotlib  
-- Scikit-learn (Random Forest, train-test split, R² score)
+## What I Used
+- Python  
+- pandas, numpy, matplotlib  
+- scikit-learn (RandomForestRegressor)
 
-## Results
-- R² Score: ~0.85  
-- Model trained on sample data, ready for real-time API integration
+## Model Accuracy
+I trained the model using Random Forest and tested it on sample data.  
+R² Score came out to be pretty good (~0.85), and it gives decent predictions.
 
-## How to Run
-1. Clone this repo  
-2. Run `traffic_model.py` in any Python environment  
-3. Modify to add real-time data later
+## How to Run It
+- Make sure Python is installed
+- Run `traffic_model.py` in any IDE (VS Code, Jupyter Notebook, etc.)
+- You can also try it on your own dataset later
 
-## Future Ideas
-- Use live traffic APIs (Google Maps, HERE, TomTom)  
-- Add a simple Streamlit web app
+## What's Next
+I plan to add live traffic data from an API and maybe build a simple interface using Streamlit.
 
----
-Built by [Om Kulkarni] | July 2025
+Project by **Om Kulkarni** | July 2025
