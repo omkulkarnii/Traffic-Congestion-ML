@@ -1,6 +1,6 @@
-Real-Time Traffic Congestion Prediction using ML
+#Real-Time Traffic Congestion Prediction using ML
 
-This project predicts traffic congestion levels using machine learning based on factors like time, day, weather, vehicle count, and speed.
+**This project predicts traffic congestion levels using machine learning based on factors like time, day, weather, vehicle count, and speed.**
 
 ## Files
 - `traffic_model.py` → ML model using RandomForestRegressor  
@@ -25,5 +25,4 @@ This project predicts traffic congestion levels using machine learning based on 
 - Add a simple Streamlit web app
 
 ---
-
-📌 Built by [Om Kulkarni] | July 2025
+Built by [Om Kulkarni] | July 2025
