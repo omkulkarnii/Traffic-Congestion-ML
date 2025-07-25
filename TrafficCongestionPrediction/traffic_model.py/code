@@ -1,6 +1,6 @@
-# 🚦 Real-Time Traffic Congestion Prediction Using ML
+# Real-Time Traffic Congestion Prediction Using ML
 
-# === 1. Import Libraries ===
+# 1. Import Libraries
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -10,38 +10,36 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 
-# === 2. Load Dataset ===
-# For demo, we'll use a sample traffic dataset (not real-time). Replace this with live data from APIs later.
-df = pd.read_csv("traffic_data_sample.csv")  # You can use datasets from Kaggle or Open Data
+# 2. Load Dataset
+df = pd.read_csv("traffic_data_sample.csv")  # Replace with real-time data when integrating API
 
-# === 3. Preprocess Data ===
-# Example columns: 'day', 'time', 'weather', 'vehicle_count', 'avg_speed', 'congestion_level'
+# 3. Preprocess Data
 df = df.dropna()
-df = pd.get_dummies(df, columns=['day', 'weather'])
+df = pd.get_dummies(df, columns=['day', 'weather'])  # Categorical encoding
 
-# === 4. Feature-Target Split ===
+# 4. Split Features and Target
 X = df.drop(['congestion_level'], axis=1)
 y = df['congestion_level']
 
-# === 5. Train/Test Split ===
+# 5. Train/Test Split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# === 6. Train Model ===
+# 6. Train Model
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
-# === 7. Evaluate Model ===
+# 7. Evaluate Model
 y_pred = model.predict(X_test)
 print("R2 Score:", r2_score(y_test, y_pred))
 print("RMSE:", np.sqrt(mean_squared_error(y_test, y_pred)))
 
-# === 8. Save Model ===
+# 8. Save Model
 joblib.dump(model, 'traffic_congestion_model.pkl')
 
-# === 9. Optional: Predict on New Data ===
-# new_data = pd.DataFrame([...])
+# 9. Predict on New Data (Optional)
+# new_data = pd.DataFrame([...])  # Format your new input rows here
 # prediction = model.predict(new_data)
 
-# === 10. Optional: Build Streamlit App ===
-# You can use this model in a Streamlit UI to take user inputs and display predicted congestion
-# Run: streamlit run app.py
+# 10. Optional: Use this model in a Streamlit App
+# Create an app.py and run: streamlit run app.py
+
